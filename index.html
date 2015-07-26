@@ -1,0 +1,312 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ASOIAF - POV Appareances</title>
+  <style>
+    body {
+      font-family: verdana, helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    table {
+      font-size: 1em;
+    }
+
+    #graph {
+      background-color: #eee;
+    }
+
+    svg rect {
+      fill: #680605;
+    }
+
+    svg rect.hover {
+      fill: #4A0000;
+    }
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+
+    #info {
+      width: 250px;
+      height: 250px;
+      border: 1px solid black;
+      padding: 1em;
+      position: absolute;
+      background: #fff;
+      z-index: 999;
+      opacity: 0;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>
+        <h2>A Song of Ice and Fire</h2>
+        <p>Number of POV chapters appearances in each book</p>
+      </td>
+      <td id="books"></td>
+      <td id="order">
+        <div>
+          <input type="radio" name="order" id="nameAscending" value="nameAscending">
+          <label for="nameAscending">Name (Ascending)</label>
+        </div>
+        <div>
+          <input type="radio" name="order" id="nameDescending" value="nameDescending">
+          <label for="nameDescending">Name (Descending)</label>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div id="graph">
+  </div>
+  <div id="info">
+    <h2>Tyrion</h2>
+    <p>D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS. D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary
+      framework, combining powerful visualization components and a data-driven approach to DOM manipulation.</p>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.min.js"></script>
+<script>
+  var margin = {
+    top: 40,
+    right: 10,
+    bottom: 110,
+    left: 40
+  };
+  var width = 960 - margin.left - margin.right;
+  var height = 500 - margin.top - margin.bottom;
+
+  //Create SVG chart
+  var svg = d3.select("#graph").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  //Scales and Axis References
+  var xScale, yScale, xAxis, yAxis;
+
+  //Data
+  var data = {};
+  var charactersInfo = {};
+  var characters = [];
+  var actualGroup = 1;
+
+  d3.selectAll("#order input").on("change", changeOrderTranisition);
+
+  d3.json("../data/characters-info.json", function(err, data) {
+    charactersInfo = data;
+  });
+
+  d3.json("../data/pov_appearances.json", function(err, asoiaf) {
+    data = asoiaf;
+
+    //Get unique list of characters for domain data
+    characters = _.uniq(_.map(asoiaf.characters, function(d) {
+      return d.character
+    }));
+
+    //Create Books radio buttons
+    createBooksSelect(asoiaf.books);
+
+    //X and Y scales
+    xScale = d3.scale.ordinal()
+      .domain(characters)
+      .rangeBands([0, width], 0.1, 0);
+
+    yScale = d3.scale.linear()
+      .domain([0, d3.max(asoiaf.characters, function(d) {
+        return d.appearances;
+      })])
+      .range([height, 0]);
+
+    //X and Y axis
+    xAxis = d3.svg.axis()
+      .scale(xScale)
+      .orient("bottom");
+
+    yAxis = d3.svg.axis()
+      .scale(yScale)
+      .orient("left")
+      .ticks(16);
+
+    //Draw bar chart
+    svg.selectAll("rect")
+      .data(asoiaf.characters)
+      .enter()
+      .append("rect")
+      .call(changeBookTransition, actualGroup)
+
+    //Draw X axis
+    svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+      .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", function(d) {
+        return "rotate(-55)"
+      });
+
+    //Draw Y axis
+    svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis);
+
+  })
+
+  function createBooksSelect(books) {
+    var radios = d3.select("#books").selectAll("#formGroups")
+      .data(books)
+      .enter()
+      .append("div")
+      .append("id", "formGroup");
+
+    radios.append("input")
+      .attr("type", "radio")
+      .attr("name", "books")
+      .attr("value", function(d) {
+        return d.number
+      })
+      .attr("id", function(d) {
+        return d.number
+      })
+      .on("change", changeBook)
+      .filter(function(d) {
+        return d.number == actualGroup
+      })
+      .attr("checked", "checked");
+
+    radios.append("label")
+      .attr("for", function(d) {
+        return d.number
+      })
+      .text(function(d) {
+        return d.group
+      });
+  }
+
+  function changeOrderTranisition() {
+    var orderCharacters = [];
+    if (this.value == "nameAscending")
+      orderCharacters = _.sortBy(characters);
+    else if (this.value == "nameDescending")
+      orderCharacters = _.sortBy(characters).reverse();
+
+    xScale
+      .domain(orderCharacters)
+      .rangeBands([0, width], 0.1, 0);
+
+    svg.select(".x.axis")
+      .transition().duration(1500).ease("sin-in-out")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+      .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em");
+
+    svg.selectAll("rect")
+      .transition()
+      .duration(500)
+      .attr("y", height)
+      .attr("height", 0)
+      .filter(function(d) {
+        return d.group == actualGroup;
+      })
+      .transition()
+      .duration(500)
+      .attr("width", xScale.rangeBand())
+      .attr("x", function(d, i) {
+        return xScale(d.character)
+      })
+      .transition()
+      .duration(500)
+      .attr("height", function(d) {
+        return height - yScale(d.appearances);
+      })
+      .attr("y", function(d) {
+        return yScale(d.appearances);
+      })
+  }
+
+  function changeBook() {
+    actualGroup = this.value;
+
+    svg.selectAll("rect")
+      .call(changeBookTransition, actualGroup);
+  }
+
+  function changeBookTransition(selection, group) {
+    selection
+      .transition()
+      .duration(500)
+      .attr("y", height)
+      .attr("height", 0)
+      .filter(function(d) {
+        return d.group == group;
+      })
+      .transition()
+      .duration(500)
+      .attr("height", function(d) {
+        return height - yScale(d.appearances);
+      })
+      .attr("width", xScale.rangeBand())
+      .attr("x", function(d, i) {
+        return xScale(d.character)
+      })
+      .attr("y", function(d) {
+        return yScale(d.appearances);
+      });
+
+    selection
+      .on("mouseover", function(d) {
+        d3.select(this).classed("hover", true);
+        showCharacterInfo(d);
+      })
+      .on("mouseout", function(d) {
+        d3.select(this).classed("hover", false);
+        hideCharacterInfo();
+      });
+  }
+
+  function showCharacterInfo(data) {
+    var info = d3.select("#info");
+
+    var character = _.find(charactersInfo.characters, function(c) {
+      return c.name == data.character;
+    });
+
+    if (character) {
+      info.select("h2").text(character.name);
+      info.select("p").text(character.description);
+    } else {
+      info.select("h2").text("No info");
+      info.select("p").text("");
+    }
+    info.transition().duration(100).style("display", "block").style("opacity", "1")
+      .style("top", "95px").style("left", margin.left * 2 + xScale(data.character) + xScale.rangeBand());
+  }
+
+  function hideCharacterInfo() {
+    var info = d3.select("#info");
+
+    info.transition().duration(100).style("opacity", "0").each("end", function() {
+      info.style("display", "none");
+    });
+  }
+</script>
+
+</html>

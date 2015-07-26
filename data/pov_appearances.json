@@ -1,0 +1,67 @@
+{
+  "books": [
+    { "group": "A Game of Thrones", "number": 1 },
+    { "group": "A Clash of Kings", "number": 2 },
+    { "group": "A Storm of Swords", "number": 3 },
+    { "group": "A Feast for Crows", "number": 4 },
+    { "group": "A Dance with Dragons", "number": 5 }
+  ],
+  "characters": [
+    { "character": "Tyrion Lannister", "group": 1, "appearances": 9 },
+    { "character": "Jon Snow", "group": 1, "appearances": 9 },
+    { "character": "Arya Stark", "group": 1, "appearances": 5 },
+    { "character": "Daenerys Targaryen", "group": 1, "appearances": 10 },
+    { "character": "Catelyn Stark", "group": 1, "appearances": 11 },
+    { "character": "Sansa Stark", "group": 1, "appearances": 6 },
+    { "character": "Bran Stark", "group": 1, "appearances": 7 },
+    { "character": "Eddard Stark", "group": 1, "appearances": 15 },
+
+    { "character": "Tyrion Lannister", "group": 2, "appearances": 15 },
+    { "character": "Jon Snow", "group": 2, "appearances": 8 },
+    { "character": "Arya Stark", "group": 2, "appearances": 10 },
+    { "character": "Daenerys Targaryen", "group": 2, "appearances": 5 },
+    { "character": "Catelyn Stark", "group": 2, "appearances": 7 },
+    { "character": "Sansa Stark", "group": 2, "appearances": 8 },
+    { "character": "Bran Stark", "group": 2, "appearances": 7 },
+    { "character": "Theon Greyjoy", "group": 2, "appearances": 6 },
+    { "character": "Davos Seaworth", "group": 2, "appearances": 3 },
+
+    { "character": "Tyrion Lannister", "group": 3, "appearances": 11 },
+    { "character": "Jon Snow", "group": 3, "appearances": 12 },
+    { "character": "Arya Stark", "group": 3, "appearances": 13 },
+    { "character": "Daenerys Targaryen", "group": 3, "appearances": 6 },
+    { "character": "Catelyn Stark", "group": 3, "appearances": 7 },
+    { "character": "Sansa Stark", "group": 3, "appearances": 7 },
+    { "character": "Bran Stark", "group": 3, "appearances": 9 },
+    { "character": "Davos Seaworth", "group": 3, "appearances": 6 },
+    { "character": "Samwell Tarly", "group": 3, "appearances": 5 },
+
+    { "character": "Arya Stark", "group": 4, "appearances": 3 },
+    { "character": "Sansa Stark", "group": 4, "appearances": 3 },
+    { "character": "Jaime Lannister", "group": 4, "appearances": 7 },
+    { "character": "Cersei Lannister", "group": 4, "appearances": 10 },
+    { "character": "Aeron Greyjoy", "group": 4, "appearances": 2 },
+    { "character": "Asha Greyjoy", "group": 4, "appearances": 1 },
+    { "character": "Victarion Greyjoy", "group": 4, "appearances": 2 },
+    { "character": "Areo Hotah", "group": 4, "appearances": 1 },
+    { "character": "Arianne Martell", "group": 4, "appearances": 2 },
+    { "character": "Arys Oakheart", "group": 4, "appearances": 1 },
+
+    { "character": "Tyrion Lannister", "group": 5, "appearances": 12 },
+    { "character": "Jon Snow", "group": 5, "appearances": 13 },
+    { "character": "Arya Stark", "group": 5, "appearances": 2 },
+    { "character": "Daenerys Targaryen", "group": 5, "appearances": 10 },
+    { "character": "Bran Stark", "group": 5, "appearances": 3 },
+    { "character": "Jaime Lannister", "group": 5, "appearances": 1 },
+    { "character": "Theon Greyjoy", "group": 5, "appearances": 7 },
+    { "character": "Davos Seaworth", "group": 5, "appearances": 4 },
+    { "character": "Cersei Lannister", "group": 5, "appearances": 2 },
+    { "character": "Victarion Greyjoy", "group": 5, "appearances": 2 },
+    { "character": "Areo Hotah", "group": 5, "appearances": 1 },
+    { "character": "Jon Connington", "group": 5, "appearances": 2 },
+    { "character": "Melisandre of Asshai", "group": 5, "appearances": 1 },
+    { "character": "Quentyn Martell", "group": 5, "appearances": 4 },
+    { "character": "Barristan Selmy", "group": 5, "appearances": 4 }
+  ]
+
+}

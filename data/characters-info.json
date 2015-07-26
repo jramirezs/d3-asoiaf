@@ -1,0 +1,96 @@
+{
+    "characters": [
+        {
+            "name": "Tyrion Lannister",
+            "description": "Tyrion Lannister is a brilliant man who is rarely seen for anything other than his dwarfism. He is clever, quick and well learned. Many have wrongly assumed he is cruel because of his physical deformities making him appear 'cruel', but this could not be farther from the truth. Son of Tywin Lannister, brother to Cersei and Jaime Lannister."
+        },
+        {
+            "name": "Jon Snow",
+            "description": "Jon Snow is the bastard son of Eddard Stark. He was born during the War of the Usurper and brought back by Eddard to live in Winterfell, to the distress of his wife Catelyn. Nothing else is known about Jon's mother, as Eddard refuses to speak of her to anyone, even Jon himself. "
+        },
+        {
+            "name": "Arya Stark",
+            "description": "Arya Stark is the second daughter and third child of Eddard Stark and his wife Catelyn. Arya Stark is a tomboyish girl who likes fighting and exploiting, unlike her older sister Sansa Stark. Her fierce temperament is often discouraged by Septa Mordane. She is left-handed, skinny, fast. With her dark hair, grey eyes and long stern face, Arya resembles more a Stark than a Tully, despite all his siblings."
+        },
+        {
+            "name": "Daenerys Targaryen",
+            "description": "Daenerys Targaryen, styling herself Daenerys I Targaryen is the nineteenth member of the Targaryen dynasty to claim the Iron Throne of Westeros. Daenerys is the daughter of King Aerys II Targaryen, the last Targaryen king to actually sit in the Iron Throne and rule the Seven Kingdoms, and his sister-wife Rhaella."
+        },
+        {
+            "name": "Catelyn Stark",
+            "description": "Catelyn Stark, formerly Catelyn Tully, is the wife of Lord Eddard Stark of Winterfell and the North at the start of A Song of Ice and Fire. She is the daughter of Hostor Tully and Minisa, formerly of house Whent. She has five children: Robb, Sansa, Arya, Bran and Rickon."
+        },
+        {
+            "name": "Sansa Stark",
+            "description": "Sansa Lannister (nee Stark) is the eldest daughter and second child of Eddard Stark and his wife Catelyn and second wife to Tyrion Lannister. Sansa is more feminine than her tomboy sibling Arya, she is very beautiful, and Queen Cersei believes that she might be the \"younger, more beautiful queen\" of her prophecy."
+        },
+        {
+            "name": "Bran Stark",
+            "description": "Brandon Stark, typically called Bran, is the second son and fourth child of Eddard Stark and his wife Catelyn. He is seven years old when A Game of Thrones begins."
+        },
+        {
+            "name": "Eddard Stark",
+            "description": "Eddard Stark, popularly called 'Ned' by his family and close friends, is the head of House Stark, the Lord of Winterfell and the Warden of the North. Eddard became Lord at the deaths of his father Lord Rickard Stark and his older sibling Brandon Stark. They were executed by Mad King Aerys."
+        },
+        {
+            "name": "Theon Greyjoy",
+            "description": "Theon Greyjoy is the fourth child of Lord Balon Greyjoy, ruler of the Iron Islands, and his wife Lady Alannys. At the start of A Game of Thrones he is nineteen years old and is a ward fostered by Lord Eddard, a polite way of saying a hostage being held at Winterfell against his father's good behavior."
+        },
+        {
+            "name": "Davos Seaworth",
+            "description": "Davos Seaworth is the Lord of the Rainwood, a bannerman to House Baratheon, and the Hand of Stannis Baratheon. Once a smuggler, Seaworth became Stannis' most honest and loyal supporter after Robert's Rebellion. He captains the Black Betha."
+        },
+        {
+            "name": "Samwell Tarly",
+            "description": "Samwell Tarly, often called Sam, is the eldest son and child of Lord Randyll Tarly and his wife, Lady Melessa Florent. Although Sam lacks fighting skills and has a timid nature, he is loyal to his friends and has a knack for learning."
+        },
+        {
+            "name": "Jaime Lannister",
+            "description": "Jaime Lannister is the son of Tywin Lannister, brother to Cersei and Tyrion Lannister. He is twins with Cersei and has had an incestuous relationship with her for many years. He is a very handsome man, with a strong masculine build. His nickname is \"Kingslayer,\" as he was the Kingsguard who slew the Mad King Aerys during the Sack of King's Landing."
+        },
+        {
+            "name": "Cersei Lannister",
+            "description": "Cersei Lannister is the eldest daughter of Lord Tywin Lannister and Lady Joanna. She is the widow of King Robert Baratheon and the Queen Regent of the Seven Kingdoms. Her son Tommen currently sits the Iron Throne of the kingdom and continent, while her only daughter, Myrcella Baratheon, is currently at Dorne."
+        },
+        {
+            "name": "Aeron Greyjoy",
+            "description": "Aeron Greyjoy, known as Damphair, is the younger brother of Balon, Euron and Victarion Greyjoy, and the uncle of Theon and Asha. He is a priest in the service of the Drowned God of the Iron Islands."
+        },
+        {
+            "name": "Asha Greyjoy",
+            "description": "Asha Greyjoy is a renowned Ironborn captain of the Iron Islands. Asha Greyjoy is the daughter of Balon Greyjoy. She had three brothers: Rodrik Greyjoy, Maron Greyjoy, and Theon Greyjoy. Only Theon is still alive, the other two died in Balon's ill-conceived Greyjoy Rebellion."
+        },
+        {
+            "name": "Victarion Greyjoy",
+            "description": "Victarion Greyjoy is the younger brother of Balon and Euron and the older brother of Aeron. He is the uncle of Theon and Asha. He is the commander of the Iron Fleet and the master of the war-galley Iron Victory."
+        },
+        {
+            "name": "Areo Hotah",
+            "description": "Areo Hotah is the captain of the guards at the prince's court in Sunspear. Originally from the Free City of Norvos, he is a loyal servant and advisor to Prince Doran Martell of Dorne."
+        },
+        {
+            "name": "Arianne Martell",
+            "description": "Arianne Martell is the eldest daughter of Prince Doran Martell of Dorne and his wife, Mellario of Norvos. Under Dornish law, Arianne is also the heir to Doran's title."
+        },
+        {
+            "name": "Arys Oakheart",
+            "description": "Arys Oakheart is a sworn warrior of the Kingsguard to King Robert Baratheon and later Joffrey and Tommen. At the order of the then-acting Hand of the King, Tyrion Lannister, he escorted Princess Myrcella Baratheon to Dorne, where she had been sworn in marriage to Prince Trystane Martell."
+        },
+        {
+            "name": "Jon Connington",
+            "description": "Jon Connington, Lord of Griffin's Roost, was the head of House Connington and briefly served as the Hand of the King during the reign of Aerys II Targaryen."
+        },
+        {
+            "name": "Melisandre of Asshai",
+            "description": "Melisandre or Melisandre of Asshai is a shadowbinder from the distant country and city of Asshai, acting in the service of King Stannis Baratheon. She is also a priestess of the Lord of Light or Red God, R'hllor. She was sold into slavery as a child. Her name was once Melony."
+        },
+        {
+            "name": "Quentyn Martell",
+            "description": "Quentyn Martell is the eldest son and second child of Prince Doran Martell of Dorne and his wife, Mellario of Norvos. Quentyn has spent much of his life as the ward of Lord Anders Yronwood."
+        },
+        {
+            "name": "Barristan Selmy",
+            "description": "Ser Barristan Selmy, most commonly known in Westeros as Barristan the Bold, is a famed knight, the former Lord Commander of the Kingsguard of King Robert Baratheon and current Lord Commander of the Queensguard of Daenerys Targaryen."
+        }
+    ]
+}
